@@ -258,5 +258,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-       
+       public float GetStamina()
+    {
+        return Stamina;
+    }
 }
