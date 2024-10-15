@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b8a2cc45eb3f3946b752485e82cfc58
+guid: b380a21fc0166ad41a189dba0a2f0deb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ZombieEYES_0
+      name: EYES_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eebcc7bf5f3eb546a8ea8ebd045fb32
-      internalID: -677955879
+      spriteID: 41427f1862b579048b929a541a1d93f4
+      internalID: 1317717435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_1
+      name: EYES_1
       rect:
         serializedVersion: 2
         x: 135
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40fb98cf68604634a9d919cdcf882a70
-      internalID: -989267540
+      spriteID: e876a1fdc54a8e84099e4c809dbd8152
+      internalID: 1295612563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_2
+      name: EYES_2
       rect:
         serializedVersion: 2
         x: 270
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0239a187c14517498bdf0419180c577
-      internalID: -1306433145
+      spriteID: c7c20969ba358cf49b95b2bd7258b817
+      internalID: -1266639683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_3
+      name: EYES_3
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9542474d698e524a88313cdb1e13432
-      internalID: -202528002
+      spriteID: 41c1cbdff199a494087f6b976aad2bec
+      internalID: 561774069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_4
+      name: EYES_4
       rect:
         serializedVersion: 2
         x: 135
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 642ef8558350b5747873916b57a52e64
-      internalID: -1882757488
+      spriteID: 6fa9030455ea25448b7e72da285a9576
+      internalID: -1850741207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_5
+      name: EYES_5
       rect:
         serializedVersion: 2
         x: 270
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e28d2fa1ae655b44ae61353e6e192d9
-      internalID: 2009577004
+      spriteID: 64d721800a4a00d43b9b2f35a860c4cf
+      internalID: 721881771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_6
+      name: EYES_6
       rect:
         serializedVersion: 2
         x: 0
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fae1dd354befcc4ba50bcfb34de7cb6
-      internalID: 1776396628
+      spriteID: 2ad8d6c4025f2c543bc2fac233f29314
+      internalID: -580411682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_7
+      name: EYES_7
       rect:
         serializedVersion: 2
         x: 135
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b90f8f47b2624440a28658dac8fa6f2
-      internalID: 764554550
+      spriteID: 07b17044e82bb5d458434780c7027a78
+      internalID: 60303035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieEYES_8
+      name: EYES_8
       rect:
         serializedVersion: 2
         x: 270
@@ -279,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 787ea12ef5dbe8a4db3f5fd9f04f8211
-      internalID: -769757062
+      spriteID: 68265c869d5d7c5419ec70ddf2b40feb
+      internalID: 731082205
       vertices: []
       indices: 
       edges: []
@@ -296,15 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ZombieEYES_0: -677955879
-      ZombieEYES_1: -989267540
-      ZombieEYES_2: -1306433145
-      ZombieEYES_3: -202528002
-      ZombieEYES_4: -1882757488
-      ZombieEYES_5: 2009577004
-      ZombieEYES_6: 1776396628
-      ZombieEYES_7: 764554550
-      ZombieEYES_8: -769757062
+      EYES_0: 1317717435
+      EYES_1: 1295612563
+      EYES_2: -1266639683
+      EYES_3: 561774069
+      EYES_4: -1850741207
+      EYES_5: 721881771
+      EYES_6: -580411682
+      EYES_7: 60303035
+      EYES_8: 731082205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
