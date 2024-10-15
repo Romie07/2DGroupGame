@@ -13,6 +13,7 @@ public class ZombieAI : MonoBehaviour
     float hesitate = 2f;
     float hesitateTimer;
     Rigidbody2D rb;
+    Vector2 dir;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class ZombieAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-   
+
     void Update()
     {
         Vector3 playerPosition = player.transform.position;
@@ -31,8 +32,25 @@ public class ZombieAI : MonoBehaviour
             //chase direction = players position - my current position
             //move in the direction of the player
             chaseDir.Normalize();
+            dir = chaseDir;
             rb.velocity = chaseDir * chaseSpeed;
             hesitateTimer = 0;
         }
+        else
+        {
+            hesitateTimer += Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            if (hesitateTimer > hesitate)
+            {
+                //despawn
+                Destroy(gameObject);
+            }
+        }
     }
+
+    public Vector3 getDir()
+    {
+        return dir;
+    }
+
 }
