@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:2DGame/Assets/Art/ZombieEyesAC.controller.meta
 guid: 907a1158f4fc01e40a6d4c2d6df362b5
+========
+guid: fbddfaf443eff4d4ab1f330a41cce860
+>>>>>>>> Pre-Merge-Conflicts:2DGame/Assets/Art/Zombie Assets/Anims/Eyes_Walk_D.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000

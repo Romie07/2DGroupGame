@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:2DGame/Assets/Art/walkingzombie_0 (1).controller.meta
 guid: b39c6affaee37b0469199d6fb8aebbe2
+========
+guid: 121f7370b79cbd44da833e7d01d61407
+>>>>>>>> Pre-Merge-Conflicts:2DGame/Assets/Art/Zombie Assets/Anims/Eyes_Walk_D.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000

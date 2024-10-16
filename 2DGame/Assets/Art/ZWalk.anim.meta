@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:2DGame/Assets/Art/ZWalk.anim.meta
 guid: 85aed1e1d6a13a24d8b82a369f374860
+========
+guid: a2cbf08db6c26324fb63b65ad6a3f5a8
+>>>>>>>> Pre-Merge-Conflicts:2DGame/Assets/Art/Zombie Assets/Anims/Eyes_Walk_Up.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

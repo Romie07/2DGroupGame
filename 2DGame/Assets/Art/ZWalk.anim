@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:2DGame/Assets/Art/ZWalk.anim
   m_Name: ZWalk
+========
+  m_Name: Zombie_Walk
+>>>>>>>> Pre-Merge-Conflicts:2DGame/Assets/Art/Zombie Assets/Anims/Zombie_Walk.anim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0

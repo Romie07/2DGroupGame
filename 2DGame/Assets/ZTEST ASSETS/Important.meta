@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:2DGame/Assets/ZTEST ASSETS/Important.meta
 guid: 167dbf3190881d642a0f659497346720
 folderAsset: yes
 DefaultImporter:
+========
+guid: 9ef66df4b2a462941a36f4e7eff5b9ea
+NativeFormatImporter:
+>>>>>>>> Pre-Merge-Conflicts:2DGame/Assets/Art/Zombie Assets/Anims/Eyes_Walk.anim.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
