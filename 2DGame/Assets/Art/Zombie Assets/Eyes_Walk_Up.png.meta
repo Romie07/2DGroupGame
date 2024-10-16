@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1763328148a9dd44fa4130fcdd5e810c
+guid: 939d3e3eb86a62f4da3b10a710a1ab4e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,49 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CrawlingZombie_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 270
-        width: 135
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9167d92bfcbf33c49bcc394a09dbde3c
-      internalID: -875361041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrawlingZombie_1
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 270
-        width: 135
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc8f7631f531ded478b776cfb40bbc04
-      internalID: 2010412523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrawlingZombie_2
+      name: Eyes_Walk_Up_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08746939184696d4693799915ca333f9
-      internalID: 1878596634
+      spriteID: 6e6aab175117b604086711085a348c36
+      internalID: 776636758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrawlingZombie_3
+      name: Eyes_Walk_Up_1
       rect:
         serializedVersion: 2
         x: 135
@@ -174,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32e0bc1bb9d1a7c44ab51793d28eb176
-      internalID: -938086459
+      spriteID: c45ce4df9d27b6043b18e2e3ca5c40d5
+      internalID: -634624154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrawlingZombie_4
+      name: Eyes_Walk_Up_2
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 278c54277491e184cbe8739ba3a88944
-      internalID: -719536213
+      spriteID: bb7b6c2ded21163479165fd1ecf8cf49
+      internalID: -1895057476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrawlingZombie_5
+      name: Eyes_Walk_Up_3
       rect:
         serializedVersion: 2
         x: 135
@@ -216,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4053c966a2dbf344ab16f6286ae436a
-      internalID: -1645069847
+      spriteID: 3f875ce6f0b669d46a327b8024f3f57e
+      internalID: -1224845180
       vertices: []
       indices: 
       edges: []
@@ -233,12 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CrawlingZombie_0: -875361041
-      CrawlingZombie_1: 2010412523
-      CrawlingZombie_2: 1878596634
-      CrawlingZombie_3: -938086459
-      CrawlingZombie_4: -719536213
-      CrawlingZombie_5: -1645069847
+      Eyes_Walk_Up_0: 776636758
+      Eyes_Walk_Up_1: -634624154
+      Eyes_Walk_Up_2: -1895057476
+      Eyes_Walk_Up_3: -1224845180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
