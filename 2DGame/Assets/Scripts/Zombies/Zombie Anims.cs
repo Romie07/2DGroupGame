@@ -9,6 +9,8 @@ public class ZombieAnims : MonoBehaviour
     ZombieAI zAI;
     Vector3 dir;
     bool rotate = false;
+    GameObject shF;
+    GameObject shS;
 
     void Start()
     {
