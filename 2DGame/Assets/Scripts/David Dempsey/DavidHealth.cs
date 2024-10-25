@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DavidHealth : MonoBehaviour
 {
+    [Header("Health")]
     [SerializeField]
     float health = 3f;
     float maxHealth;
+    [Header("Regen")]
     [SerializeField]
     float regenSpeed = 2f;
     float regenAmount = 1f;
@@ -20,6 +22,9 @@ public class DavidHealth : MonoBehaviour
 
     void Update()
     {
-        
+        if (health <=0)
+        {
+            Debug.Log("You died");
+        }
     }
 }
