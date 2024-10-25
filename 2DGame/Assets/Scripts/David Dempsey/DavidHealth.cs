@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DavidHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField]
-    float health = 3f;
+    public float playerHealth = 3f;
     float maxHealth;
     [Header("Regen")]
     [SerializeField]
@@ -16,15 +17,22 @@ public class DavidHealth : MonoBehaviour
 
     void Start()
     {
-        maxHealth = health;
+        maxHealth = playerHealth;
     }
 
-
-    void Update()
+    public void TakeDamage(float amount)
     {
-        if (health <=0)
+        playerHealth -= amount;
+
+        if (playerHealth <= 0)
         {
-            Debug.Log("You died");
+            Die();
         }
     }
+
+    private void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+   
 }
