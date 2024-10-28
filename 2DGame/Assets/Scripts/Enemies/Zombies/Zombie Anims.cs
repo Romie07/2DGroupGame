@@ -18,7 +18,7 @@ public class ZombieAnims : MonoBehaviour
     private const float targetX = 0f;
     private const float firstTargetY = 1f;
     private const float secondTargetY = -1f;
-    private const float tolerance = 0.5f;
+    private const float tolerance = 0.35f;
 
     void Start()
     {

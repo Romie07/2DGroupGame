@@ -74,7 +74,7 @@ MonoBehaviour:
   - {x: -0.7446537, y: -1.5429885, z: 0.00000020116568}
   m_ShapePathHash: 2116906967
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49782
+  m_InstanceId: 46226
   m_LocalBounds:
     m_Center: {x: -0.4904325, y: 0.36010337, z: 0}
     m_Extent: {x: 0.9088814, y: 2.2666113, z: 0}
@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 2216467071235693580}
   - component: {fileID: 5310797778225893119}
   - component: {fileID: 6168965833887730241}
+  - component: {fileID: 6173730723877653846}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b95255e627120a4487b0f756c680f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 18
+  chaseSpeed: 9
   detectionRadius: 40
   hesitate: 5
 --- !u!114 &2216467071235693580
@@ -407,6 +408,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   atkTimer: 2
+--- !u!114 &6173730723877653846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026427492098786827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356c656c9aac3834fa14a6d4bd367b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
 --- !u!1 &6340595501952935232
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,19 +552,19 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 000000002be9c66029cfffbc
   m_ShapePath:
   - {x: -0.27569437, y: -2.0257907, z: 0.00000020116568}
-  - {x: -1.2989941, y: -2.0020146, z: 0.00000020116568}
-  - {x: -1.2957001, y: 1.5407865, z: 0.00000020116568}
-  - {x: -1.2381382, y: 2.335983, z: 0.00000020116568}
+  - {x: -1.0826802, y: -1.976057, z: 0.00000020116568}
+  - {x: -1.0966916, y: 1.4802186, z: 0.00000020116568}
+  - {x: -1.0910449, y: 2.3273304, z: 0.00000020116568}
   - {x: -0.7768593, y: 2.5473638, z: 0.00000020116568}
   - {x: -0.31638288, y: 2.3676796, z: 0.00000020116568}
   - {x: -0.30643702, y: 1.9250627, z: 0.00000020116568}
   - {x: -0.3045392, y: 1.314574, z: 0}
-  m_ShapePathHash: 1717369409
+  m_ShapePathHash: 195067773
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49792
+  m_InstanceId: 46236
   m_LocalBounds:
-    m_Center: {x: -0.7873442, y: 0.26078653, z: 0}
-    m_Extent: {x: 0.51164985, y: 2.2865772, z: 0}
+    m_Center: {x: -0.686193, y: 0.26078653, z: 0}
+    m_Extent: {x: 0.41049862, y: 2.2865772, z: 0}
 --- !u!114 &6535628299752633003
 MonoBehaviour:
   m_ObjectHideFlags: 0
