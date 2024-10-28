@@ -31,6 +31,20 @@ public class EnemyDamageHandler : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            DavidHealth playerHealth = collider.gameObject.GetComponent<DavidHealth>();
+
+            if (playerHealth != null && atkTimer <= 0)
+            {
+                DealDamage(playerHealth);
+                atkTimer = atkTimerMax;
+            }
+        }
+    }
+
     public void DealDamage(DavidHealth playerHealth)
     {
         playerHealth.TakeDamage(damageAmount);
