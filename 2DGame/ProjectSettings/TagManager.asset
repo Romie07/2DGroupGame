@@ -53,3 +53,6 @@ TagManager:
   - name: Player
     uniqueID: 3170881321
     locked: 0
+  - name: Lights
+    uniqueID: 1043001899
+    locked: 0

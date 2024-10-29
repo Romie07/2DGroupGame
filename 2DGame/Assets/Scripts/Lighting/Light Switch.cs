@@ -39,7 +39,7 @@ public class LightSwitch : MonoBehaviour
                 theLights[i].GetComponent<Light2D>().color = Color.white;
                 theLights[i].GetComponent<Light2D>().pointLightOuterRadius += 5;
                 theLights[i].GetComponent<Light2D>().falloffIntensity -= 0.25f;
-                theLights[i].GetComponent<Light2D>().shadowIntensity -= 0.5f;
+                theLights[i].GetComponent<Light2D>().shadowIntensity -= 0.75f;
             }
             swapped = true;
         }
@@ -50,7 +50,7 @@ public class LightSwitch : MonoBehaviour
                 theLights[i].GetComponent<Light2D>().color = Color.red;
                 theLights[i].GetComponent<Light2D>().pointLightOuterRadius -= 5;
                 theLights[i].GetComponent<Light2D>().falloffIntensity += 0.25f;
-                theLights[i].GetComponent<Light2D>().shadowIntensity += 0.5f;
+                theLights[i].GetComponent<Light2D>().shadowIntensity += 0.75f;
             }
             swapped = false;
         }
