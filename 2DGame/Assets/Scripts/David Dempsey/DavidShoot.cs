@@ -19,7 +19,7 @@ public class DavidShoot : MonoBehaviour
 
         timer += Time.deltaTime;
         //IF we press "the shoot button" (left mouse?)
-        if (Input.GetButton("Fire1") && timer > fireRate && Time.timeScale != 0)
+        if (Input.GetButtonDown("Fire1") && timer > fireRate && Time.timeScale != 0)
         {
             timer = 0;
             //fire a projectile in a straight line in the direction of the mouse
