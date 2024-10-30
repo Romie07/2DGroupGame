@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DavidShoot : MonoBehaviour
-{ 
+{
+    [Header("General")]
     [SerializeField]
     GameObject prefab;
     [SerializeField]
     float bulletSpeed = 10f;
     [SerializeField]
     float bulletDrop = 5.0f;
+    [Header("Cooldowns")]
     [SerializeField]
     float fireRate = 0.5f;
     float timer = 0;

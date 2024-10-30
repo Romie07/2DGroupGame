@@ -25,7 +25,7 @@ public class EnemyDamageHandler : MonoBehaviour
             if (playerHealth != null && atkTimer <= 0)
             {
                 // Apply damage to the player
-                DealDamage(playerHealth);
+                playerHealth.TakeDamage(damageAmount);
                 atkTimer = atkTimerMax;
             }
         }
@@ -39,16 +39,12 @@ public class EnemyDamageHandler : MonoBehaviour
 
             if (playerHealth != null && atkTimer <= 0)
             {
-                DealDamage(playerHealth);
+                playerHealth.TakeDamage(damageAmount);
                 atkTimer = atkTimerMax;
             }
         }
     }
 
-    public void DealDamage(DavidHealth playerHealth)
-    {
-        playerHealth.TakeDamage(damageAmount);
-    }
 
     private void Update()
     {

@@ -7,6 +7,7 @@ TagManager:
   - Zombie
   - Player Bullet
   - ColoredLightsMain
+  - RoundHandler
   layers:
   - Default
   - TransparentFX

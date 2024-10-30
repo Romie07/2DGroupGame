@@ -20,11 +20,20 @@ public class DavidHealth : MonoBehaviour
         maxHealth = playerHealth;
     }
 
+    private void Update()
+    {
+        regenTimer += Time.deltaTime;
+    }
+
     public void TakeDamage(float amount)
     {
         playerHealth -= amount;
+        if (playerHealth < maxHealth && regenTimer > regenSpeed)
+        {
+            Regen();
+        }
 
-        if (playerHealth <= 0)
+        else if (playerHealth <= 0)
         {
             Die();
         }
@@ -33,6 +42,12 @@ public class DavidHealth : MonoBehaviour
     private void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Regen()
+    {
+        playerHealth += regenAmount;
+        regenTimer = 0;
     }
    
 }
