@@ -22,12 +22,10 @@ public class Rounds : MonoBehaviour
     [SerializeField]
     float zombieIncreaseMultiplier = 1.25f;
     int currentRoundZombieMax;
-    [SerializeField]
-    float timeBetweenRounds;
     float timer;
     [Header("Sound")]
     [SerializeField]
-    AudioClip roundStart;
+    AudioSource roundStart;
     [Header("Testing")]
     public float roundNum;
     public int zombiesKilled;
@@ -37,10 +35,12 @@ public class Rounds : MonoBehaviour
 
     void Start()
     {
+        roundStart = GetComponent<AudioSource>();
         currentRound = startOnRound;
         roundCount.text = startOnRound.ToString();
         if (currentRound == 1)
         {
+            roundStart.Play();
             Cooldown = roundChangeCooldown;
             currentRoundZombieMax = zombiesOnRoundOne;
             zombiesLeft = currentRoundZombieMax;
@@ -48,6 +48,7 @@ public class Rounds : MonoBehaviour
         }
         if (currentRound > 1)
         {
+            roundStart.Play();
             Cooldown = roundChangeCooldown;
             currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
             zombiesLeft = currentRoundZombieMax;
@@ -67,9 +68,10 @@ public class Rounds : MonoBehaviour
         {
             zombiesKilled = 0;
             currentRound += 1;
-            if (currentRound >= 1)
+            Cooldown = roundChangeCooldown;
+            roundStart.Play();
+            if (currentRound >= 1 && Cooldown > 5)
             {
-                Cooldown = roundChangeCooldown;
                 currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
                 roundNum = currentRound;
             }
