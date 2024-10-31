@@ -11,12 +11,14 @@ public class Rounds : MonoBehaviour
     float currentRound;
     [SerializeField]
     int zombiesOnRoundOne = 8;
-    int currentZombies;
+    public float zombieSpawnCooldown = 5f;
+    [SerializeField]
+    float roundChangeCooldown = 10f;
     [SerializeField]
     TMP_Text roundCount;
     [Header("Round Increase Settings")]
     [SerializeField]
-    float healthIncreaseMultiplier = 1;
+    int healthIncrease = 6;
     [SerializeField]
     float zombieIncreaseMultiplier = 1.25f;
     int currentRoundZombieMax;
@@ -26,43 +28,59 @@ public class Rounds : MonoBehaviour
     [Header("Sound")]
     [SerializeField]
     AudioClip roundStart;
-    
+    [Header("Testing")]
+    public float roundNum;
+    public int zombiesKilled;
+    public int zombiesLeft;
+    public int totalZombieKills;
+    public float Cooldown = 10f;
 
     void Start()
     {
         currentRound = startOnRound;
         roundCount.text = startOnRound.ToString();
-        
+        if (currentRound == 1)
+        {
+            Cooldown = roundChangeCooldown;
+            currentRoundZombieMax = zombiesOnRoundOne;
+            zombiesLeft = currentRoundZombieMax;
+            roundNum = currentRound;
+        }
+        if (currentRound > 1)
+        {
+            Cooldown = roundChangeCooldown;
+            currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
+            zombiesLeft = currentRoundZombieMax;
+            roundNum = currentRound;
+        }
     }
 
     void Update()
     {
-        if (currentRound == 1)
-        {
-            currentRoundZombieMax = zombiesOnRoundOne;
-        }
-        else
-        {
-            currentRoundZombieMax = Mathf.RoundToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
-        }
-        checkForZombies();
+        Cooldown -= Time.deltaTime;
+        RoundAdjustments();
     }
 
-    private void checkForZombies()
-    {
-        currentZombies = GameObject.FindGameObjectsWithTag("Zombie").Length;
-    }
     private void RoundAdjustments()
     {
-        if (currentZombies == 0)
+        if (zombiesKilled >= currentRoundZombieMax)
         {
+            zombiesKilled = 0;
             currentRound += 1;
+            if (currentRound >= 1)
+            {
+                Cooldown = roundChangeCooldown;
+                currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
+                roundNum = currentRound;
+            }
+            roundCount.text = currentRound.ToString();
+            zombiesLeft = currentRoundZombieMax;
         }
     }
 
-    public int zombieAmt()
+    public int getHealthAdd()
     {
-        return currentRoundZombieMax;
+        return healthIncrease;
     }
 
 }

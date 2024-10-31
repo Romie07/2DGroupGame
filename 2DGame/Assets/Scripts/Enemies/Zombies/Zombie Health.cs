@@ -5,17 +5,34 @@ using UnityEngine;
 public class ZombieHealth : MonoBehaviour
 {
     [SerializeField]
-    float health = 8;
-    float maxHealth;
+    int startingHealth;
+    int currentHealth;
+    int maxHealth;
+    GameObject roundHandler;
+    [SerializeField]
+    int zhealthDebug;
+
+    private Rounds rounds;
+
     void Start()
     {
-        maxHealth = health;
-
+        roundHandler = GameObject.FindGameObjectWithTag("RoundHandler");
+        rounds = roundHandler.GetComponent<Rounds>();
+        if (rounds.roundNum == 1)
+        {
+            maxHealth = startingHealth;
+        }
+        else if (rounds.roundNum > 1)
+        {
+            maxHealth = Mathf.CeilToInt(startingHealth * (rounds.roundNum + rounds.getHealthAdd()));
+        }
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        zhealthDebug = currentHealth;
 
     }
 
@@ -23,10 +40,13 @@ public class ZombieHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player Bullet")
         {
-            health -= 1;
-            if (health <= 0)
+            currentHealth -= 1;
+            if (currentHealth <= 0)
             {
                 Destroy(gameObject);
+                rounds.zombiesKilled++;
+                rounds.totalZombieKills++;
+                rounds.zombiesLeft--;
             }
         }
 
