@@ -10,37 +10,31 @@ public class Spawn : MonoBehaviour
     [SerializeField]
     float detectionRadius = 40f;
     int Zombies;
-    [SerializeField]
-    float spawnInterval = 2f;
     float spawnTimer;
     GameObject player;
     GameObject roundHandler;
-    int maxNumofZ;
 
     private Rounds rounds;
     void Start()
     {
         roundHandler = GameObject.FindGameObjectWithTag("RoundHandler");
         rounds = roundHandler.GetComponent<Rounds>();
-        spawnTimer = spawnInterval;
         player = GameObject.FindGameObjectWithTag("Player");
-        maxNumofZ = rounds.zombieAmt();
+        spawnTimer = rounds.zombieSpawnCooldown;
     }
 
     void Update()
     {
-        maxNumofZ = rounds.zombieAmt();
         spawnTimer -= Time.deltaTime;
 
         Vector3 distance = player.transform.position - transform.position;
 
         countZombies();
 
-        if (Zombies < maxNumofZ && spawnTimer <= 0 && distance.magnitude <= detectionRadius)
+        if (Zombies < rounds.zombiesLeft && Zombies <= 24 && spawnTimer <= 0 && distance.magnitude <= detectionRadius && rounds.Cooldown <= 0)
         {
             GameObject Zombie = Instantiate(zombiePrefab, transform.position, Quaternion.identity);
-            spawnTimer = spawnInterval;
-            maxNumofZ--;
+            spawnTimer = rounds.zombieSpawnCooldown;
         }
     }
 

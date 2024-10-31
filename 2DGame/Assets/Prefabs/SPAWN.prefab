@@ -45,5 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 6026427492098786827, guid: d4438a1197b5aab498ee59b1a56cb723, type: 3}
-  detectionRadius: 100
-  spawnInterval: 1
+  detectionRadius: 75
