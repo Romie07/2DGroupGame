@@ -24,7 +24,7 @@ public class ZombieHealth : MonoBehaviour
         }
         else if (rounds.roundNum > 1)
         {
-            maxHealth = Mathf.CeilToInt(startingHealth * (rounds.roundNum + rounds.getHealthAdd()));
+            maxHealth = Mathf.CeilToInt(startingHealth + (rounds.roundNum - 1) * rounds.getHealthAdd());
         }
         currentHealth = maxHealth;
     }
@@ -43,10 +43,10 @@ public class ZombieHealth : MonoBehaviour
             currentHealth -= 1;
             if (currentHealth <= 0)
             {
-                Destroy(gameObject);
                 rounds.zombiesKilled++;
                 rounds.totalZombieKills++;
                 rounds.zombiesLeft--;
+                Destroy(gameObject);
             }
         }
 

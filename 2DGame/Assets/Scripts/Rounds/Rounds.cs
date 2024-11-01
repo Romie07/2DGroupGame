@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Rounds : MonoBehaviour
@@ -32,24 +34,24 @@ public class Rounds : MonoBehaviour
     public int zombiesLeft;
     public int totalZombieKills;
     public float Cooldown = 10f;
+    bool started = false;
+    bool coolingDown = true;
+    bool playedSound = false;
 
     void Start()
     {
         roundStart = GetComponent<AudioSource>();
         currentRound = startOnRound;
-        roundCount.text = startOnRound.ToString();
+        Cooldown = roundChangeCooldown;
+        roundCount.text = "";
         if (currentRound == 1)
         {
-            roundStart.Play();
-            Cooldown = roundChangeCooldown;
             currentRoundZombieMax = zombiesOnRoundOne;
             zombiesLeft = currentRoundZombieMax;
             roundNum = currentRound;
         }
         if (currentRound > 1)
         {
-            roundStart.Play();
-            Cooldown = roundChangeCooldown;
             currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
             zombiesLeft = currentRoundZombieMax;
             roundNum = currentRound;
@@ -59,6 +61,10 @@ public class Rounds : MonoBehaviour
     void Update()
     {
         Cooldown -= Time.deltaTime;
+        if (started == false && Cooldown < (roundChangeCooldown * 0.75))
+        {
+            firstRoundStart();
+        }
         RoundAdjustments();
     }
 
@@ -66,23 +72,41 @@ public class Rounds : MonoBehaviour
     {
         if (zombiesKilled >= currentRoundZombieMax)
         {
-            zombiesKilled = 0;
-            currentRound += 1;
-            Cooldown = roundChangeCooldown;
-            roundStart.Play();
-            if (currentRound >= 1 && Cooldown > 5)
+            if (coolingDown == false)
+            {
+                Cooldown = roundChangeCooldown;
+                coolingDown = true;
+            }
+            if (currentRound >= 1 && Cooldown < (roundChangeCooldown * 0.75) && playedSound == false)
+            {
+                currentRound += 1;
+                roundStart.Play();
+                roundCount.text = currentRound.ToString();
+                roundNum = currentRound;
+                playedSound = true;
+            }
+            if (Cooldown < 0)
             {
                 currentRoundZombieMax = Mathf.CeilToInt(zombiesOnRoundOne * (currentRound * zombieIncreaseMultiplier));
-                roundNum = currentRound;
+                zombiesLeft = currentRoundZombieMax;
+                zombiesKilled = 0;
+                coolingDown = false;
+                playedSound = false;
             }
-            roundCount.text = currentRound.ToString();
-            zombiesLeft = currentRoundZombieMax;
         }
     }
 
     public int getHealthAdd()
     {
         return healthIncrease;
+    }
+
+    private void firstRoundStart()
+    {
+        roundStart.Play();
+        started = true;
+        roundCount.text = startOnRound.ToString();
+        coolingDown = false;
     }
 
 }

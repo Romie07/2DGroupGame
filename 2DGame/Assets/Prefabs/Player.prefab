@@ -550,5 +550,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 286759437076257278, guid: e6403436a6d271b46ba6dc01f6f0335f, type: 3}
   bulletSpeed: 100
-  bulletDrop: 5
-  fireRate: 0.5
+  bulletDrop: 3
+  fireRate: 0.25

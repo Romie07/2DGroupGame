@@ -20,7 +20,7 @@ public class DavidShoot : MonoBehaviour
     {
 
         timer += Time.deltaTime;
-        if (Input.GetButton("Fire1") && timer > fireRate && Time.timeScale != 0)
+        if (Input.GetButtonDown("Fire1") && timer > fireRate && Time.timeScale != 0)
         {
             timer = 0;
             Vector3 mousePos = Input.mousePosition;
@@ -33,6 +33,20 @@ public class DavidShoot : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = mousePos * bulletSpeed;
             bullet.GetComponent<Rigidbody2D>().transform.up = mousePos;
            Destroy(bullet, bulletDrop);
+        }
+        else if (Input.GetButton("Fire1") && timer > fireRate && Time.timeScale != 0)
+        {
+            timer = 0;
+            Vector3 mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            mousePos.z = 0;
+            mousePos = mousePos - transform.position;
+            mousePos.Normalize();
+            //spawn in the bullet
+            GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = mousePos * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().transform.up = mousePos;
+            Destroy(bullet, bulletDrop);
         }
     }
 }
