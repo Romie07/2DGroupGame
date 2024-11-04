@@ -6,18 +6,26 @@ public class ZombieHealth : MonoBehaviour
 {
     [SerializeField]
     int startingHealth;
+    [SerializeField]
+    int pointsOnHit = 10;
+    [SerializeField]
+    int pointsOnDeath = 50;
     int currentHealth;
     int maxHealth;
     GameObject roundHandler;
+    GameObject pointHandler;
     [SerializeField]
     int zhealthDebug;
 
     private Rounds rounds;
+    private Points points;
 
     void Start()
     {
         roundHandler = GameObject.FindGameObjectWithTag("RoundHandler");
         rounds = roundHandler.GetComponent<Rounds>();
+        pointHandler = GameObject.FindGameObjectWithTag("PointHandler");
+        points = pointHandler.GetComponent<Points>();
         if (rounds.roundNum == 1)
         {
             maxHealth = startingHealth;
@@ -41,15 +49,26 @@ public class ZombieHealth : MonoBehaviour
         if (collision.gameObject.tag == "Player Bullet")
         {
             currentHealth -= 1;
-            if (currentHealth <= 0)
+            if (currentHealth > 0)
             {
-                rounds.zombiesKilled++;
-                rounds.totalZombieKills++;
-                rounds.zombiesLeft--;
-                Destroy(gameObject);
+                points.currentPoints += pointsOnHit;
+            }
+            else if (currentHealth <= 0)
+            {
+                Die();
             }
         }
 
     }
+
+    private void Die()
+    {
+        rounds.zombiesKilled++;
+        rounds.totalZombieKills++;
+        rounds.zombiesLeft--;
+        points.currentPoints += pointsOnDeath;
+        Destroy(gameObject);
+    }
+
 }
 
