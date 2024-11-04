@@ -18,6 +18,7 @@ public class Rounds : MonoBehaviour
     float roundChangeCooldown = 10f;
     [SerializeField]
     TMP_Text roundCount;
+
     [Header("Round Increase Settings")]
     [SerializeField]
     int healthIncrease = 6;
@@ -25,9 +26,11 @@ public class Rounds : MonoBehaviour
     float zombieIncreaseMultiplier = 1.25f;
     int currentRoundZombieMax;
     float timer;
+
     [Header("Sound")]
     [SerializeField]
     AudioSource roundStart;
+
     [Header("Testing")]
     public float roundNum;
     public int zombiesKilled;

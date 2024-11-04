@@ -74,7 +74,7 @@ MonoBehaviour:
   - {x: -0.7446537, y: -1.5429885, z: 0.00000020116568}
   m_ShapePathHash: 2116906967
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41546
+  m_InstanceId: 30324
   m_LocalBounds:
     m_Center: {x: -0.4904325, y: 0.36010337, z: 0}
     m_Extent: {x: 0.9088814, y: 2.2666113, z: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b95255e627120a4487b0f756c680f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 12
+  chaseSpeed: 8
   detectionRadius: 100
   hesitate: 5
 --- !u!114 &2216467071235693580
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 8
+  zhealthDebug: 0
 --- !u!1 &6340595501952935232
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +562,7 @@ MonoBehaviour:
   - {x: -0.3045392, y: 1.314574, z: 0}
   m_ShapePathHash: 195067773
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41556
+  m_InstanceId: 30334
   m_LocalBounds:
     m_Center: {x: -0.686193, y: 0.26078653, z: 0}
     m_Extent: {x: 0.41049862, y: 2.2865772, z: 0}
