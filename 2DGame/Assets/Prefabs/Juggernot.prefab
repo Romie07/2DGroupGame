@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 3223223834263180261}
   - component: {fileID: 1431410269095660683}
   - component: {fileID: 4324284216194090635}
+  - component: {fileID: 5117967089896941163}
+  - component: {fileID: 6727716050785592306}
   m_Layer: 0
   m_Name: Juggernot
   m_TagString: Untagged
@@ -226,6 +228,101 @@ PolygonCollider2D:
       - {x: 0.390625, y: -0.453125}
       - {x: 0.390625, y: 0.203125}
   m_UseDelaunayMesh: 0
+--- !u!114 &5117967089896941163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319012984147830360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000002be9c660c90ab3e729cfffbc2bf22a3e
+  m_ShapePath:
+  - {x: -0.31138706, y: -0.49904633, z: 0}
+  - {x: -0.31154418, y: -0.48407173, z: 0}
+  - {x: -0.32733226, y: -0.4835949, z: 0}
+  - {x: -0.32733607, y: -0.4678135, z: 0}
+  - {x: -0.34321928, y: -0.4678135, z: 0}
+  - {x: -0.34322143, y: -0.4523182, z: 0}
+  - {x: -0.35891438, y: -0.45250893, z: 0}
+  - {x: -0.35679793, y: -0.14425659, z: 0}
+  - {x: -0.34036684, y: -0.14360046, z: 0}
+  - {x: -0.34102392, y: -0.099565506, z: 0}
+  - {x: -0.32459283, y: -0.098249435, z: 0}
+  - {x: -0.32393575, y: -0.08247566, z: 0}
+  - {x: -0.30947638, y: -0.0811615, z: 0}
+  - {x: -0.30816174, y: -0.06670189, z: 0}
+  - {x: -0.29304504, y: -0.065387726, z: 0}
+  - {x: -0.29173064, y: -0.05158615, z: 0}
+  - {x: -0.2450664, y: -0.05224228, z: 0}
+  - {x: -0.24375176, y: -0.035812378, z: 0}
+  - {x: -0.08809757, y: -0.038122177, z: 0}
+  - {x: -0.0871253, y: 0.01657486, z: 0}
+  - {x: -0.20966434, y: 0.12006569, z: 0}
+  - {x: -0.24377346, y: 0.23660469, z: 0}
+  - {x: -0.18692493, y: 0.39104462, z: 0}
+  - {x: -0.035328627, y: 0.49053, z: 0}
+  - {x: 0.10679269, y: 0.4621048, z: 0}
+  - {x: 0.19111824, y: 0.36167145, z: 0}
+  - {x: 0.23564959, y: 0.23755264, z: 0}
+  - {x: 0.19491267, y: 0.12195587, z: 0}
+  - {x: 0.078368425, y: 0.018686295, z: 0}
+  - {x: 0.07742095, y: -0.040058136, z: 0}
+  - {x: 0.24006581, y: -0.04099655, z: 0}
+  - {x: 0.24566698, y: -0.0525856, z: 0}
+  - {x: 0.28978062, y: -0.055685043, z: 0}
+  - {x: 0.29543972, y: -0.06648636, z: 0}
+  - {x: 0.3073387, y: -0.06594467, z: 0}
+  - {x: 0.3078797, y: -0.08054924, z: 0}
+  - {x: 0.3241055, y: -0.08163071, z: 0}
+  - {x: 0.3251872, y: -0.09569359, z: 0}
+  - {x: 0.33979058, y: -0.096775055, z: 0}
+  - {x: 0.33870888, y: -0.14112473, z: 0}
+  - {x: 0.3560164, y: -0.14382935, z: 0}
+  - {x: 0.3563695, y: -0.4487629, z: 0}
+  - {x: 0.3374102, y: -0.45116043, z: 0}
+  - {x: 0.33825016, y: -0.46543884, z: 0}
+  - {x: 0.32229137, y: -0.46543884, z: 0}
+  - {x: 0.32229137, y: -0.47971916, z: 0}
+  - {x: 0.3054924, y: -0.4805584, z: 0}
+  - {x: 0.3054924, y: -0.4948368, z: 0}
+  m_ShapePathHash: -76944083
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -6686
+  m_LocalBounds:
+    m_Center: {x: -0.00127244, y: -0.004258156, z: 0}
+    m_Extent: {x: 0.35764194, y: 0.49478817, z: 0}
+--- !u!95 &6727716050785592306
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319012984147830360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7cb22d2e26add642a0281f777ce3bbc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8566021939523026070
 GameObject:
   m_ObjectHideFlags: 0
