@@ -7,13 +7,14 @@ public class DavidHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField]
-    public float playerHealth = 3f;
-    float maxHealth;
+    public int playerHealth = 3;
+    public int maxHealth;
     [Header("Regen")]
     [SerializeField]
     float regenSpeed = 2f;
-    float regenAmount = 1f;
+    int regenAmount = 1;
     float regenTimer;
+    public bool interact;
 
     void Start()
     {
@@ -23,9 +24,19 @@ public class DavidHealth : MonoBehaviour
     private void Update()
     {
         regenTimer += Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.E))
+        {
+                interact = true;
+
+        }
+        else
+        {
+            interact = false;
+        }
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         playerHealth -= amount;
         if (playerHealth < maxHealth && regenTimer > regenSpeed)

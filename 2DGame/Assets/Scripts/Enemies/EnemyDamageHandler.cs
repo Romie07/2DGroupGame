@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamageHandler : MonoBehaviour
 {
-    public float damageAmount = 1f;
+    public int damageAmount = 1;
     [SerializeField]
     float atkTimer;
     float atkTimerMax;

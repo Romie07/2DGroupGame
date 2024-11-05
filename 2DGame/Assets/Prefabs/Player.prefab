@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3090400574682287558}
   - component: {fileID: 5286678924495065725}
   - component: {fileID: 8698352295852430462}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a0a19ce67ac21478687bf3095b6b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 18
-  sprintSpeed: 28
+  walkSpeed: 16
+  sprintSpeed: 24
   Stamina: 3
   StaminaRegenT: 4
   playerRunning: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 1
-  m_ApplyToSortingLayers: 00000000c90ab3e72be9c66029cfffbc
+  m_ApplyToSortingLayers: 000000002be9c660c90ab3e729cfffbc
   m_ShapePath:
   - {x: -0.13106918, y: -0.515995, z: 0}
   - {x: -0.14513779, y: 0.26391983, z: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
   - {x: -0.06457901, y: -0.51971436, z: 0}
   m_ShapePathHash: 971372773
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57676
+  m_InstanceId: -1340
   m_LocalBounds:
     m_Center: {x: 0.0026652813, y: 0.042510986, z: 0}
     m_Extent: {x: 0.14780307, y: 0.56222534, z: 0}
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
+  maxHealth: 0
   regenSpeed: 2
 --- !u!114 &8698352295852430462
 MonoBehaviour:
@@ -341,7 +342,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
