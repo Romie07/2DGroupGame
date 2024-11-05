@@ -6,9 +6,13 @@ using UnityEngine.Rendering.Universal;
 public class LightSwitch : MonoBehaviour
 {
     GameObject[] theLights;
+    [SerializeField]
+    GameObject GlobalLight;
     bool swapped = false;
     [SerializeField]
     Color Default;
+    [SerializeField]
+    float intensityChange = 0.25f;
 
     void Start()
     {
@@ -41,6 +45,7 @@ public class LightSwitch : MonoBehaviour
                 theLights[i].GetComponent<Light2D>().falloffIntensity -= 0.25f;
                 theLights[i].GetComponent<Light2D>().shadowIntensity -= 0.75f;
             }
+            GlobalLight.GetComponent<Light2D>().intensity += intensityChange;
             swapped = true;
         }
         else if (swapped == true)  
@@ -51,6 +56,7 @@ public class LightSwitch : MonoBehaviour
                 theLights[i].GetComponent<Light2D>().pointLightOuterRadius -= 5;
                 theLights[i].GetComponent<Light2D>().falloffIntensity += 0.25f;
                 theLights[i].GetComponent<Light2D>().shadowIntensity += 0.75f;
+                GlobalLight.GetComponent<Light2D>().intensity -= intensityChange;
             }
             swapped = false;
         }
