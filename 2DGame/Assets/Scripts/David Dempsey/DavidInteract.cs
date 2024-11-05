@@ -8,7 +8,7 @@ public class DavidInteract : MonoBehaviour
 
     void Start()
     {
-        Flashlight = false;
+        Flashlight = true;
     }
 
     void Update()
@@ -23,6 +23,10 @@ public class DavidInteract : MonoBehaviour
             {
                 Flashlight = false;
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }

@@ -13,18 +13,31 @@ public class DavidHealth : MonoBehaviour
     [SerializeField]
     float regenSpeed = 2f;
     int regenAmount = 1;
-    float regenTimer;
+    public float regenTimer;
     public bool interact;
+    GameObject GameOverHandler;
+
+    private GameOver gameOver;
+
 
     void Start()
     {
+        GameOverHandler = GameObject.FindGameObjectWithTag("GameOverHandler");
+        gameOver = GameOverHandler.GetComponent<GameOver>();
         maxHealth = playerHealth;
     }
 
     private void Update()
     {
         regenTimer += Time.deltaTime;
-
+        if (playerHealth < maxHealth && regenTimer > regenSpeed)
+        {
+            Regen();
+        }
+        else if (playerHealth > maxHealth)
+        {
+            playerHealth = maxHealth;
+        }
         if (Input.GetKey(KeyCode.E))
         {
                 interact = true;
@@ -39,12 +52,8 @@ public class DavidHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         playerHealth -= amount;
-        if (playerHealth < maxHealth && regenTimer > regenSpeed)
-        {
-            Regen();
-        }
-
-        else if (playerHealth <= 0)
+        regenTimer = 0;
+        if (playerHealth <= 0)
         {
             Die();
         }
@@ -52,7 +61,8 @@ public class DavidHealth : MonoBehaviour
 
     private void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameOver.Dead = true;
+        gameOver.GameOverScreen();
     }
 
     private void Regen()

@@ -36,6 +36,7 @@ public class Rounds : MonoBehaviour
     public int zombiesKilled;
     public int zombiesLeft;
     public int totalZombieKills;
+    public int totalPoints = 0;
     public float Cooldown = 10f;
     bool started = false;
     bool coolingDown = true;
@@ -43,6 +44,8 @@ public class Rounds : MonoBehaviour
 
     void Start()
     {
+        totalPoints = 0;
+        roundNum = startOnRound;
         roundStart = GetComponent<AudioSource>();
         currentRound = startOnRound;
         Cooldown = roundChangeCooldown;

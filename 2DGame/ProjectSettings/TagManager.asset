@@ -10,6 +10,10 @@ TagManager:
   - RoundHandler
   - PointHandler
   - GameOverCanvas
+  - GameOverHandler
+  - UI
+  - LightHandler
+  - DeathCamera
   layers:
   - Default
   - TransparentFX

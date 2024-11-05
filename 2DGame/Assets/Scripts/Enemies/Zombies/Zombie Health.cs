@@ -52,6 +52,7 @@ public class ZombieHealth : MonoBehaviour
             if (currentHealth > 0)
             {
                 points.currentPoints += pointsOnHit;
+                rounds.totalPoints += pointsOnHit;
             }
             else if (currentHealth <= 0)
             {
@@ -67,6 +68,7 @@ public class ZombieHealth : MonoBehaviour
         rounds.totalZombieKills++;
         rounds.zombiesLeft--;
         points.currentPoints += pointsOnDeath;
+        rounds.totalPoints += pointsOnDeath;
         Destroy(gameObject);
     }
 
