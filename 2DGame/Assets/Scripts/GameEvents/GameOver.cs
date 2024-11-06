@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
     [Header("Debug Info")]
     public bool Dead = false;
+    [SerializeField]
+    float GOScreenTime = 10f;
     [Header("References")]
     GameObject GameOverCanvas;
     GameObject RoundHandler;
@@ -28,6 +31,8 @@ public class GameOver : MonoBehaviour
     AudioSource DeadAudio;
     [SerializeField]
     AudioSource AmbientAudio;
+    bool GameOverScreenActive = false;
+    float GOScreenTimer;
 
     private Rounds rounds;
     private Points points;
@@ -38,19 +43,37 @@ public class GameOver : MonoBehaviour
     {
         SetObjects();
         SetComponents();
+        GameOverScreenActive = false;
         GameOverCanvas.SetActive(false);
         UI.SetActive(true);
-        Time.timeScale = 1;
         DeathCamera.SetActive(false);
         Player.SetActive(true);
         PlayerCamera.enabled = true;
+        KillsT.text = " ";
+        PointsT.text = " ";
+        GOScreenTimer = GOScreenTime;
+    }
+
+    void Update()
+    {
+        if (GameOverScreenActive == true)
+        {
+            GOScreenTimer -= Time.deltaTime;
+            Debug.Log(GOScreenTimer);
+            if (GOScreenTimer <= 0)
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+        }
     }
 
     public void GameOverScreen()
     {
         DisableEnableObjects();
+        SetText();
         DeadAudio.Play();
         AmbientAudio.Stop();
+        GameOverScreenActive = true;
     }
 
     private void SetObjects()
@@ -62,8 +85,6 @@ public class GameOver : MonoBehaviour
         Lights = GameObject.FindGameObjectWithTag("LightHandler");
         DeathCamera = GameObject.FindGameObjectWithTag("DeathCamera");
         Player = GameObject.FindGameObjectWithTag("Player");
-        KillsT.text = " ";
-        PointsT.text = " ";
     }
 
     private void SetComponents()
@@ -78,7 +99,6 @@ public class GameOver : MonoBehaviour
     {
         UI.SetActive(false);
         GameOverCanvas.SetActive(true);
-        Time.timeScale = 0;
         lightswitch.GameOverColorSwap();
         PlayerCamera.enabled = false;
         Player.SetActive(false);
@@ -89,13 +109,13 @@ public class GameOver : MonoBehaviour
     {
         if (rounds.roundNum > 1)
         {
-            RoundsSurvived.text = "You Survived " + rounds.roundNum + "Rounds";
+            RoundsSurvived.text = "You Survived " + rounds.roundNum + " Rounds";
             KillsT.text = rounds.totalZombieKills.ToString();
             PointsT.text = rounds.totalPoints.ToString();
         }
-        else
+        else if (rounds.roundNum == 1)
         {
-            RoundsSurvived.text = "You Survived " + rounds.roundNum + "Round";
+            RoundsSurvived.text = "You Survived " + rounds.roundNum + " Round";
             KillsT.text = rounds.totalZombieKills.ToString();
             PointsT.text = rounds.totalPoints.ToString();
         }

@@ -14,6 +14,7 @@ TagManager:
   - UI
   - LightHandler
   - DeathCamera
+  - Flashlight
   layers:
   - Default
   - TransparentFX
