@@ -24,9 +24,5 @@ public class DavidInteract : MonoBehaviour
                 Flashlight = false;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 }
