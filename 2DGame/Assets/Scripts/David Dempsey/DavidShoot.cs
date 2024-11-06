@@ -15,6 +15,12 @@ public class DavidShoot : MonoBehaviour
     [SerializeField]
     float fireRate = 0.5f;
     float timer = 0;
+    AudioSource shootSound;
+
+    private void Start()
+    {
+        shootSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -32,6 +38,7 @@ public class DavidShoot : MonoBehaviour
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = mousePos * bulletSpeed;
             bullet.GetComponent<Rigidbody2D>().transform.up = mousePos;
+            shootSound.Play();
            Destroy(bullet, bulletDrop);
         }
         else if (Input.GetButton("Fire1") && timer > fireRate && Time.timeScale != 0)
@@ -46,6 +53,7 @@ public class DavidShoot : MonoBehaviour
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = mousePos * bulletSpeed;
             bullet.GetComponent<Rigidbody2D>().transform.up = mousePos;
+            shootSound.Play();
             Destroy(bullet, bulletDrop);
         }
     }
